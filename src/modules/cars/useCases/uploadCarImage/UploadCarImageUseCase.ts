@@ -1,8 +1,8 @@
+import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { AppError } from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../shared/errors/AppError";
-import { ICarsImagesRepository } from "../../repositories/ICarsImagesRepository";
-import { ICarsRepository } from "../../repositories/ICarsRepository";
 
 interface IRequest {
   car_id: string;
