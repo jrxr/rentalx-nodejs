@@ -1,8 +1,9 @@
-import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
-import { AppError } from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 
+import { IDateProvider } from "../../../../shared/container/providers/DateProvider/IDateProvider";
+import { AppError } from "../../../../shared/errors/AppError";
 import { ICarsRepository } from "../../../cars/repositories/ICarsRepository";
+import { Rental } from "../../infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "../../repositories/IRentalsRepository";
 
 interface IRequest {
@@ -21,7 +22,6 @@ class CreateRentalUseCase {
     @inject("CarsRepository")
     private carsRepository: ICarsRepository
   ) {}
-
   async execute({
     user_id,
     car_id,
